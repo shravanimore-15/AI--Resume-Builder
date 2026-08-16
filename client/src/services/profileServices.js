@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/user";
+const API_URL = `${import.meta.env.VITE_API_URL}/user`;
 
 export const getProfile = async () => {
   const token = localStorage.getItem("token");
@@ -18,7 +18,6 @@ export const getProfile = async () => {
 
   return data;
 };
-
 
 export const updateProfile = async (profileData) => {
   const token = localStorage.getItem("token");
