@@ -1,9 +1,7 @@
-const User = require("../models/User");
+const User = require("../models/user");
 const getProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user._id).select(
-      "-password"
-    );
+    const user = await User.findById(req.user._id).select("-password");
 
     if (!user) {
       return res.status(404).json({
